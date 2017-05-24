@@ -17,10 +17,10 @@ can now install the Keybase application using docker.
 
 3. docker build -t my_keybase .
 
-4. docker run my_keybase keybase help
+4. docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro my_keybase
 
 ### From hub.docker.com
 
 1. docker pull retro64xyz/docker-keybase
 
-2. docker run retro64xyz/docker-keybase keybase help
+2. docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro retro64xyz/docker-keybase
