@@ -2,12 +2,12 @@
 
 ## Docker Image - Keybase
 
-[Keybase.io][https://keybase.io/] is working to bring crypto to the world. You
+[Keybase.io](https://keybase.io/) is working to bring crypto to the world. You
 can now install the Keybase application using docker.
 
 ## How to use
 
-[Keybase docs][https://keybase.io/docs/command_line] are available from Keybase.
+[Keybase docs](https://keybase.io/docs/command_line) are available from Keybase.
 
 ### From Github
 
