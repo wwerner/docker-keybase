@@ -32,5 +32,5 @@ docker run -it \
     -e KEYBASE_USERNAME=<keybase user> 
     -e KEYBASE_PAPERKEY="<keybase paperkey>" 
     wernerw/docker-keybase \
-    "keybase oneshot && git clone keybase://team/<keybase team>/<keybase repo> /tmp/<work dir> && /tmp/workdir/<script to run>"
+    "keybase oneshot && git clone keybase://team/<keybase team>/<keybase repo> /tmp/<work dir> && /tmp/<work dir>/<script to run>"
 ```
