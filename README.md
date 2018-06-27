@@ -1,4 +1,12 @@
-# wwerner/docker-keybase (forked from Retro64XYZ/docker-keybase)
+
+![Docker Build](https://img.shields.io/docker/build/wernerw/docker-keybase.svg)
+![Docker Stars](https://img.shields.io/docker/stars/wernerw/docker-keybase.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/wernerw/docker-keybase.svg)
+![Image Size](https://img.shields.io/microbadger/image-size/wernerw/docker-keybase.svg)
+![Image Layers](https://img.shields.io/microbadger/layers/wernerw/docker-keybase.svg)
+
+# wwerner/docker-keybase 
+(originally forked from Retro64XYZ/docker-keybase)
 
 ## Docker Image - Keybase
 
@@ -7,22 +15,22 @@ can now install the Keybase application using docker.
 
 You can use this container to run oneshot keybase devices within your CI pipeline, thus giving it access to encrypted keybase git repos.
 
+Please note that ATM, this is a pretty large image. Working on that.
+
 ## How to use
 
 [Keybase docs](https://keybase.io/docs/command_line) are available from Keybase.
 
-### From Github
+To check out an encrypted keybase git repository you need the following:
+* A keybase user w/ a paperkey
+* A keybase git repo the user has access to
 
-1. git clone git@github.com:Retro64XYZ/docker-keybase.git docker-keybase
+You can e.g. use this to run scripts using credentials / keys stored in a keybase git repository:
 
-2. cd docker-keybase
-
-3. docker build -t my_keybase .
-
-4. docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro my_keybase
-
-### From hub.docker.com
-
-1. docker pull retro64xyz/docker-keybase
-
-2. docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro retro64xyz/docker-keybase
+```
+docker run -it \
+    -e KEYBASE_USERNAME=<keybase user> 
+    -e KEYBASE_PAPERKEY="<keybase paperkey>" 
+    wernerw/docker-keybase \
+    "keybase oneshot && git clone keybase://team/<keybase team>/<keybase repo> /tmp/<work dir> && /tmp/workdir/<script to run>"
+```
