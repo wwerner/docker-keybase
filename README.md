@@ -8,6 +8,8 @@
 # wwerner/docker-keybase 
 (originally forked from Retro64XYZ/docker-keybase)
 
+Image on docker hub: https://hub.docker.com/r/wernerw/docker-keybase/
+
 ## Docker Image - Keybase
 
 [Keybase.io](https://keybase.io/) is working to bring crypto to the world. You
