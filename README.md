@@ -1,9 +1,11 @@
-# retro64xyz/docker-keybase
+# wwerner/docker-keybase
 
 ## Docker Image - Keybase
 
 [Keybase.io](https://keybase.io/) is working to bring crypto to the world. You
 can now install the Keybase application using docker.
+
+You can use this container to run oneshot keybase devices within your CI pipeline, thus giving it access to encrypted keybase git repos.
 
 ## How to use
 
