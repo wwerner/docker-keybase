@@ -23,16 +23,16 @@ Please note that ATM, this is a pretty large image. Working on that.
 
 [Keybase docs](https://keybase.io/docs/command_line) are available from Keybase.
 
-To check out an encrypted keybase git repository you need the following:
-* A keybase user w/ a paperkey
-* A keybase git repo the user has access to
+Usage requiers ... 
+* ... a keybase user w/ a paperkey
+* ... a keybase git repo the user has access to
 
 You can e.g. use this to run scripts using credentials / keys stored in a keybase git repository:
 
 ```
 docker run -it \
-    -e KEYBASE_USERNAME=<keybase user> 
-    -e KEYBASE_PAPERKEY="<keybase paperkey>" 
+    -e KEYBASE_USERNAME=<keybase user> \
+    -e KEYBASE_PAPERKEY="<keybase paperkey>" \ 
     wernerw/docker-keybase \
     "keybase oneshot && git clone keybase://team/<keybase team>/<keybase repo> /tmp/<work dir> && /tmp/<work dir>/<script to run>"
 ```
