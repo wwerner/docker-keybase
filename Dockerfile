@@ -1,6 +1,6 @@
 FROM debian:stretch-slim
 
-LABEL maintainer="Wolfgang Werner <mail@wolfgang-werner.net>"
+LABEL maintainer="Wolfgang Werner"
 
 ENV KEYBASE_VERSION 1.0
 
