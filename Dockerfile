@@ -4,6 +4,7 @@ LABEL maintainer="Wolfgang Werner <mail@wolfgang-werner.net>"
 
 ENV KEYBASE_VERSION 1.0
 
+# Base dependencies
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
     ca-certificates \
@@ -17,7 +18,6 @@ RUN apt-get update \
     libuuid1 \
     libindicator7 \
     libappindicator1 \
-    openjdk-8-jdk \
     gnome-icon-theme \
     libappindicator-dev \
   && curl -O https://prerelease.keybase.io/keybase_amd64.deb \
@@ -26,19 +26,25 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
 
-RUN curl -O http://artfiles.org/apache.org/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz \
-  && tar xzf apache-maven-3.5.4-bin.tar.gz \
-  && rm maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz \
-  && ln -s apache-maven-3.5.4/bin/mvn /bin/mvn \
-  && chmod a+x /bin/mvn
-  
+# Dependencies for .NET builds
 RUN apt-get update \
-  && apt-get -y install \
-      openjdk-8-jdk \
+  && apt-get install --no-install-recommends -y \
+    libunwind8 \
+    libuuid1 \
+  && rm -rf /var/lib/apt/lists/* \
+  && apt-get clean
+
+# Dependencies for Java/Maven builds
+RUN apt-get update \
+  && mkdir -p /usr/share/man/man1 \
+  && apt-get -y --no-install-recommends install \
+      openjdk-8-jdk-headless \
+      openjdk-8-jre-headless \
       maven \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
 
+# Add keybase user as keybase cannot be run as root
 RUN adduser --disabled-password --gecos "" keybaseme
 USER keybaseme
 
