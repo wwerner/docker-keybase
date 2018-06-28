@@ -7,21 +7,28 @@ ENV KEYBASE_VERSION 1.0
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
     ca-certificates \
-    wget \
-    libssl1.1 \
-    openssl \
+    curl \
     fuse \
     git-core \
     psmisc \
     libgconf-2-4 \
     libgtk2.0-0 \
+    libunwind8 \
+    libuuid1 \
     libindicator7 \
     libappindicator1 \
     gnome-icon-theme \
     libappindicator-dev \
-  && wget -q https://prerelease.keybase.io/keybase_amd64.deb \
+  && curl -O https://prerelease.keybase.io/keybase_amd64.deb \
   && dpkg -i keybase_amd64.deb \
   && rm keybase_amd64.deb \
+  && rm -rf /var/lib/apt/lists/* \
+  && apt-get clean
+
+RUN apt-get update \
+  && apt-get -y install \
+      default-jdk \
+      maven \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
 
