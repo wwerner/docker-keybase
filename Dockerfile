@@ -9,6 +9,7 @@ RUN apt-get update \
   && apt-get install --no-install-recommends -y \
     ca-certificates \
     curl \
+    gpg \
     fuse \
     git-core \
     psmisc \

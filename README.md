@@ -17,13 +17,19 @@ can now install the Keybase application using docker.
 
 You can use this container to run oneshot keybase devices within your CI pipeline, thus giving it access to encrypted keybase git repos.
 
+It supports Java builds using Maven and .NET builds if you additionally install .NET using the official installer script (see https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script).
+Java & .NET dependencies are separate layers, so they are easy to remove if you don't need them.
+
+We use it to build and publish Java libraries to the official Maven repository and .NET packages to Nuget, using credentials / certificates from a keybase repository.
+
+
 Please note that ATM, this is a pretty large image. Working on that.
 
 ## How to use
 
 [Keybase docs](https://keybase.io/docs/command_line) are available from Keybase.
 
-Usage requiers ... 
+Usage requires ... 
 * ... a keybase user w/ a paperkey
 * ... a keybase git repo the user has access to
 
