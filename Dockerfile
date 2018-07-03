@@ -11,6 +11,7 @@ RUN apt-get update \
     curl \
     jq \
     gpg \
+    openssh-client \
     fuse \
     git-core \
     psmisc \
