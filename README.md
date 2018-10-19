@@ -7,9 +7,10 @@
 
 
 # wwerner/docker-keybase 
-(originally forked from Retro64XYZ/docker-keybase)
 
 Image on docker hub: https://hub.docker.com/r/wernerw/docker-keybase/
+
+(originally forked from Retro64XYZ/docker-keybase)
 
 ## Docker Image - Keybase
 
