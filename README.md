@@ -6,7 +6,7 @@
 [![Image Layers](https://img.shields.io/microbadger/layers/wernerw/docker-keybase.svg)](https://microbadger.com/images/wernerw/docker-keybase)
 
 
-# wwerner/docker-keybase 
+# docker-keybase 
 
 Image on docker hub: https://hub.docker.com/r/wernerw/docker-keybase/
 
