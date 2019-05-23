@@ -1,4 +1,9 @@
 
+ARCHIVED and moved to https://github.com/wwerner/ci-dockerfiles
+
+---
+
+
 [![Docker Build](https://img.shields.io/docker/build/wernerw/docker-keybase.svg)](https://hub.docker.com/r/wernerw/docker-keybase/builds/)
 [![Docker Stars](https://img.shields.io/docker/stars/wernerw/docker-keybase.svg)](https://hub.docker.com/r/wernerw/docker-keybase/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/wernerw/docker-keybase.svg)](https://hub.docker.com/r/wernerw/docker-keybase/)
